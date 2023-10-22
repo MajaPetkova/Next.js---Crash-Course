@@ -1,2 +1,2 @@
-# Next.js---Crash-Course
+# next.js---crash-course
 Crash Course 
