@@ -1,3 +1,23 @@
-.container{
-    background-color: red;
+.container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+.links{
+    gap: 20px;
+    display: flex;
+    align-items:center;
+}
+.logout{
+    padding: 5px;
+    border: none;
+    background-color: #53c28b;
+    color:white;
+    cursor: pointer;
+    border-radius: 3px;
 }
