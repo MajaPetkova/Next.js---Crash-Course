@@ -1,6 +1,7 @@
 import { Ultra } from 'next/font/google';
 import Link from 'next/link'
 import React from 'react';
+import styles from "./page.module.css";
 
 const links = [
     {
@@ -38,7 +39,7 @@ const Navbar = () => {
   return (
     <div>
         <Link href="/">Lammamias</Link>
-        <div>
+        <div className={styles.container}>
          {links.map(x => (<Link key={x.id} href={x.url}>{x.title}</Link>))}
         </div>
     </div>

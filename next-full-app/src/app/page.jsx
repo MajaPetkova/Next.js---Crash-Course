@@ -1,8 +1,8 @@
-import styles from './page.module.css'
 import React from "react"
+import styles from './page.module.css'
 
 export default function Home() {
   return (
-   <div>Hello World</div>
+   <div className={styles.container}>Hello World</div>
   )
 }
