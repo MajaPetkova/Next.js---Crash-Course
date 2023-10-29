@@ -24,13 +24,4 @@
   height: 500px;
   object-fit: cover;
 }
-.button {
-  padding: 20px;
-  cursor: pointer;
-  background: #53c28b;
-  border: none;
-  border-radius: 5px;
-  width: max-content;
-  color: white;
-  font-weight: 400;
-}
+
