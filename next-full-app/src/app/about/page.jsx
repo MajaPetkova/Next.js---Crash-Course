@@ -1,19 +1,19 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Button from "../../components/button/Button"
+import Button from "../../components/button/Button";
 
 const About = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
         <Image
-          src="https://images.pexels.com/photos/4048182/pexels-photo-4048182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src="https://images.pexels.com/photos/3277808/pexels-photo-3277808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           fill={true}
           alt="img"
           className={styles.image}
         />
-        <div>
+        <div className={styles.text}>
           <h1 className={styles.imgTitle}>Digital Storytellers</h1>
           <h2 className={styles.imgDesc}>
             Handcrafting award winning digital experiences
@@ -54,11 +54,18 @@ const About = () => {
             similique. Eius laboriosam eligendi iusto labore placeat aliquid id
             aspernatur quo dolorem ratione accusantium tempore commodi minima
             delectus optio quis vitae, enim quas repellat recusandae itaque
-            ducimus eveniet voluptas. Quo ducimus, consectetur id error quas
-            voluptatum temporibus numquam eveniet nihil earum cupiditate
-            architecto magnam in totam facere molestiae!
+            ducimus eveniet voluptas.
+            <br />
+            <br />
+            - Dynamic Websites
+            <br />
+            <br/>
+            - Creativ Ilustrations
+            <br/>
+            <br/>
+            - Fast and Handy Mobiles App
           </p>
-          <Button url="/contact" text="Contact"/>
+          <Button url="/contact" text="Contact" />
         </div>
       </div>
     </div>
