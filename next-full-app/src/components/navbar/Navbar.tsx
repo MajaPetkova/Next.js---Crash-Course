@@ -4,6 +4,7 @@ import { Ultra } from "next/font/google";
 import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css";
+import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 
 const links = [
   {
@@ -44,6 +45,7 @@ const Navbar = () => {
         lammamias
       </Link>
       <div className={styles.links}>
+        <DarkModeToggle/>
         {links.map((x) => (
           <Link key={x.id} href={x.url} className={styles.link}>
             {x.title}
