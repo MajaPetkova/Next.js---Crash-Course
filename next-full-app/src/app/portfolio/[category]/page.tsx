@@ -2,31 +2,44 @@ import React from "react";
 import styles from "./page.module.css";
 import Button from "../../../components/button/Button";
 import Image from "next/image";
+import {items} from "./data.js"
+import { notFound } from "next/navigation";
 
+const getData = (cat) => {
+  const data = items[cat];
+
+  if(data){
+    return data
+  }
+  return notFound()
+};
 const Category = ({ params }) => {
+const data= getData(params.category)
+console.log(data)
   return (
     <div className={styles.container}>
       <h1 className={styles.catTitle}>{params.category}</h1>
-      <div className={styles.item}>
+{data.map((x)=>(
+
+      <div className={styles.item} key={x.id}>
         <div className={styles.content}>
-          <h1 className={styles.title}>Creative Portfolio</h1>
-          <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus laudantium odio ipsam rem, officia et fugit nesciunt vero. Eaque reiciendis id inventore non obcaecati ab autem cupiditate ad itaque corrupti!</p>
-          <Button text="See more" url="#"/>
+          <h1 className={styles.title}>{x.title}</h1>
+          <p className={styles.desc}>
+           {x.desc}
+          </p>
+          <Button text="See more" url="#" />
         </div>
         <div className={styles.imageContainer}>
-          <Image className={styles.img} fill={true} src="https://images.pexels.com/photos/776469/pexels-photo-776469.jpeg?auto=compress&cs=tinysrgb&w=400" alt="img"/>
+          <Image
+            className={styles.img}
+            fill={true}
+            src={x.image}
+            alt="img"
+          />
         </div>
       </div>
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>Creative Portfolio</h1>
-          <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus laudantium odio ipsam rem, officia et fugit nesciunt vero. Eaque reiciendis id inventore non obcaecati ab autem cupiditate ad itaque corrupti!</p>
-          <Button text="See more" url="#"/>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image className={styles.img} fill={true} src="https://images.pexels.com/photos/6073142/pexels-photo-6073142.jpeg?auto=compress&cs=tinysrgb&w=400" alt="img"/>
-        </div>
-      </div>
+))}
+
     </div>
   );
 };
