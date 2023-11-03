@@ -12,6 +12,16 @@ async function getData(id) {
   }
   return res.json();
 }
+
+export async function generateMetadata({ params }) {
+
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 const BlogPost = async ({ params }) => {
   const data = await getData(params.id);
   return (
@@ -32,17 +42,12 @@ const BlogPost = async ({ params }) => {
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image
-            src={data.img}
-            alt=""
-            fill={true}
-            className={styles.image}
-          />
+          <Image src={data.img} alt="" fill={true} className={styles.image} />
         </div>
       </div>
       <div className={styles.content}>
         <p className={styles.text}>
-      {data.content}
+          {data.content}
           <br></br>
           <br></br>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore sunt,
