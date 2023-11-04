@@ -3,6 +3,10 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Blog Page",
+  description: "Description",
+};
 async function getData() {
   const res = await fetch("http://localhost:3000/api/posts", {cache:"no-store"});
   if (!res.ok) {
