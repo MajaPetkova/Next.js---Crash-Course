@@ -1,5 +1,5 @@
 # next.js---crash-course
-Crash Course 
+crash course 
 
 -To start 
 npm run dev 
